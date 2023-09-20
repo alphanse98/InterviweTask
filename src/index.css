@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.TaskPopUp{
+width: 100%;
+height: 100vh;
+
+}
+.TaskPopUpBox{
+  position: absolute;
+  top: 10%;
+  right: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 50px;
+}
