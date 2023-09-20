@@ -8,18 +8,19 @@ export const HomePage = () => {
   
     const[data, setData] = useState([]);
     const[popupActive, setPopupActive] = useState(true);
-    const [editData, setEditData] = useState()
+    const [editData, setEditData] = useState();
+    const [editIndex, setEditIndex ]= useState();
 
     const handleEdit = (data, index)=>{
         setEditData(data)
+        setEditIndex(index)
         setPopupActive(true)
-        console.log(data, index)
     }
   return (
-    <div>
+    <div className='flex'>
         <MenuBar setPopupActive={setPopupActive}/>
         <TaskCards data={data} setData={setData} handleEdit={handleEdit}/>
-        {popupActive && <TaskPopUp setPopupActive={setPopupActive} data={data} setData={setData} editData={editData}/>}
+        {popupActive && <TaskPopUp setPopupActive={setPopupActive} data={data} setData={setData} editData={editData} editIndex={editIndex} setEditData={setEditData}/>}
     </div>
   )
 }

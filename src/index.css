@@ -1,26 +1,11 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+    font-family: sans-serif;
 }
-
-.TaskPopUp{
-width: 100%;
-height: 100vh;
-
+.custom-bg-color{
+    background-color: #7440D3;
 }
-.TaskPopUpBox{
-  position: absolute;
-  top: 10%;
-  right: 50%;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 50px;
-}
+/* bg-purple-800 */

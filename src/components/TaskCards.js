@@ -3,8 +3,7 @@ import React from 'react'
 const TaskCards = ({data, setData, handleEdit}) => {
 
     const handleDelete = (item)=>{
-    let  temData = data.filter((param)=> param.title !== item.title )
-    console.log(temData)
+    let  temData = data.filter((param)=> param.id !== item.id )
     setData(temData)
     }
 
