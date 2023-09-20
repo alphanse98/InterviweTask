@@ -5,17 +5,7 @@ import TaskCards from '../components/TaskCards'
 import { useState } from 'react'
 
 export const HomePage = () => {
-    const temData = [
-        {
-            id:123,
-            title:"work",
-            date:"9/20/2023",
-            description:"working .......",
-            derictory:"main",
-            important:false,
-            completed:false,
-        }
-    ]
+  
     const[data, setData] = useState([]);
     const[popupActive, setPopupActive] = useState(true);
     const [editData, setEditData] = useState()
