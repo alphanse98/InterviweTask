@@ -2,6 +2,7 @@ import React from 'react'
 
 const TaskCards = ({data, setData, handleEdit}) => {
 
+  // delete tha cards using by id
     const handleDelete = (item)=>{
     let  temData = data.filter((param)=> param.id !== item.id )
     setData(temData)

@@ -5,27 +5,39 @@ import { useState } from 'react'
 const TaskPopUp = ({setPopupActive, data, setData, editData, editIndex, setEditData}) => {
     const[formData, setFormData] = useState( editData || {})
     
+    // update the input value to formData state
     const handleChange = (e)=>{
         setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     }
 
+    // dynamically change heading value for edit and add cards
     let heading  = "Add a task"
     if(editData) heading  = "Edit a task"
 
+    // handle the edit and add actions like update the card and add new card
     const handleSubmit = ()=>{
+        // update the edited data to same index position of the array 
         if(editData){
             let temData = [...data]
             temData.splice(editIndex, 1, formData)
             setData(temData)
         }else{
+            //  create id for new card and push to the array
             formData.id = Math.floor(Math.random() * 1234567812345678);
             let temData = [...data]
             temData.push(formData)
             setData(temData)
         }
+        // close popup and clear edit data
         setPopupActive(false)
         setEditData('')
     }
+
+    //  when the popup close clear the edit data
+    const handleClose = ()=>{
+        setPopupActive(false)
+        setEditData('')
+    } 
 
   return (
     <div className='min-h-screen w-full backdrop-blur-sm bg-gray-700 bg-opacity-60 absolute flex justify-center pt-10 pb-24'>
@@ -33,7 +45,7 @@ const TaskPopUp = ({setPopupActive, data, setData, editData, editIndex, setEditD
             <div className=' p-3 bg-slate-200 rounded-lg flex flex-col justify-between h-100'>
                 <div className='flex justify-between'>
                     <h1 className='text-lg'>{heading}</h1>
-                    <img src={icon} onClick={()=>setPopupActive(false)} alt='icon'></img>
+                    <img className='cursor-pointer' src={icon} onClick={handleClose} alt='icon'></img>
                 </div>
                 <div className='mt-1'>
                     <p className='text-sm'>Title</p>
