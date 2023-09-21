@@ -6,8 +6,8 @@ import { useState } from 'react'
 
 export const HomePage = () => {
   
-    const[data, setData] = useState([]);
-    const[popupActive, setPopupActive] = useState(true);
+    const [data, setData] = useState([]);
+    const [popupActive, setPopupActive] = useState(true);
     const [editData, setEditData] = useState();
     const [editIndex, setEditIndex ]= useState();
 
